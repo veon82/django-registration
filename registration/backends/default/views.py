@@ -89,6 +89,7 @@ class RegistrationView(BaseRegistrationView):
             username, email, password, site,
             send_email=self.SEND_ACTIVATION_EMAIL,
             request=request,
+            profile_callback=None
         )
         signals.user_registered.send(sender=self.__class__,
                                      user=new_user,
